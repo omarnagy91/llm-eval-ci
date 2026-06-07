@@ -1,0 +1,248 @@
+{
+  "config_name": "nimbus-support-bot",
+  "system_name": "v1",
+  "overall_pass_rate": 1.0,
+  "gate_passed": true,
+  "gate_reasons": [
+    "all gate checks passed"
+  ],
+  "grader_scores": {
+    "grounding": 1.0,
+    "hallucination": 1.0,
+    "relevance": 0.9902,
+    "tool_call": 1.0,
+    "answer_quality": 1.0
+  },
+  "grader_pass_rate": {
+    "grounding": 1.0,
+    "hallucination": 1.0,
+    "relevance": 1.0,
+    "tool_call": 1.0,
+    "answer_quality": 1.0
+  },
+  "baseline_delta": {},
+  "items": [
+    {
+      "item_id": "refund",
+      "passed": true,
+      "output": "You can request a full refund within 14 days of purchase. After that, the subscription is non-refundable.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden/fabricated claims"
+        },
+        {
+          "grader": "relevance",
+          "score": 0.9412,
+          "passed": true,
+          "rationale": "lexical relevance to reference=0.94"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no tool expected"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    },
+    {
+      "item_id": "free_storage",
+      "passed": true,
+      "output": "The Free plan includes 5 GB of storage.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden/fabricated claims"
+        },
+        {
+          "grader": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "lexical relevance to reference=1.00"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no tool expected"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    },
+    {
+      "item_id": "pro_price",
+      "passed": true,
+      "output": "The Pro plan costs $20 per month, billed monthly.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden/fabricated claims"
+        },
+        {
+          "grader": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "lexical relevance to reference=1.00"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no tool expected"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    },
+    {
+      "item_id": "team_seats",
+      "passed": true,
+      "output": "The Team plan supports up to 10 seats.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden/fabricated claims"
+        },
+        {
+          "grader": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "lexical relevance to reference=1.00"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no tool expected"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    },
+    {
+      "item_id": "data_residency",
+      "passed": true,
+      "output": "Your data is stored in the EU (Frankfurt) region.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden/fabricated claims"
+        },
+        {
+          "grader": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "lexical relevance to reference=1.00"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no tool expected"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    },
+    {
+      "item_id": "password_reset",
+      "passed": true,
+      "output": "I've sent a reset link to your email — please check your inbox.",
+      "grades": [
+        {
+          "grader": "grounding",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "1/1 required facts present"
+        },
+        {
+          "grader": "hallucination",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "no forbidden claims configured"
+        },
+        {
+          "grader": "relevance",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "lexical relevance to reference=1.00"
+        },
+        {
+          "grader": "tool_call",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "expected tool 'reset_password' called"
+        },
+        {
+          "grader": "answer_quality",
+          "score": 1.0,
+          "passed": true,
+          "rationale": "[offline rubric judge] grounding=1.00 factuality=1.00"
+        }
+      ]
+    }
+  ]
+}

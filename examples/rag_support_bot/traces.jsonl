@@ -1,0 +1,8 @@
+{"id": "t1", "input": "What is your refund policy?", "output": "You can request a full refund within 14 days of purchase.", "context": ["Refunds: full refund within 14 days of purchase."], "meta": {"ts": "2026-05-01", "thumbs": "up"}}
+{"id": "t2", "input": "How much storage does the Free plan include?", "output": "5 GB.", "context": ["Free plan: 5 GB storage."], "meta": {"ts": "2026-05-01", "thumbs": "up"}}
+{"id": "t3", "input": "How much does the Pro plan cost?", "output": "It's $20/mo.", "context": ["Pro plan: $20 per month."], "meta": {"ts": "2026-05-02"}}
+{"id": "t4", "input": "How many seats does the Team plan support?", "output": "Up to 10 seats.", "context": ["Team plan: up to 10 seats."], "meta": {"ts": "2026-05-02"}}
+{"id": "t5", "input": "Where is my data stored?", "output": "EU, Frankfurt.", "context": ["Data residency: EU (Frankfurt)."], "meta": {"ts": "2026-05-03", "thumbs": "down", "note": "user wanted more detail"}}
+{"id": "t6", "input": "I forgot my password, can you help me reset it?", "output": "Sent you a reset link.", "context": ["Password reset via reset_password tool."], "tool_calls": [{"name": "reset_password"}], "meta": {"ts": "2026-05-03"}}
+{"id": "t7", "input": "Do you offer annual billing?", "output": "Yes, annual billing saves 20%.", "context": ["Annual billing: 20% discount vs monthly."], "meta": {"ts": "2026-05-04"}}
+{"id": "t8", "input": "Can I export my data?", "output": "Yes, from Settings > Export.", "context": ["Data export available under Settings > Export (CSV/JSON)."], "meta": {"ts": "2026-05-04"}}

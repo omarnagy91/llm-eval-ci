@@ -1,0 +1,37 @@
+name: LLM eval gate
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -e .
+
+      - name: Run eval gate
+        # Non-zero exit fails this check and blocks the merge when quality regresses.
+        run: |
+          python -m llm_eval_ci.cli run \
+            --config examples/rag_support_bot/eval.yaml \
+            --system examples/rag_support_bot/system_v1.py \
+            --baseline examples/rag_support_bot/baseline.json \
+            --report eval-report.md \
+            --summary
+        # For real LLM-as-judge grading, set `judge: openai` in eval.yaml and uncomment:
+        # env:
+        #   OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+
+      - name: Upload report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: eval-report
+          path: eval-report.md

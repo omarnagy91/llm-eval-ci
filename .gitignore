@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+*.egg-info/
+build/
+dist/
+.DS_Store
+examples/**/last-report.md
+eval-report.md
+
+# internal go-to-market kit — never publish
+GTM/
+
+# internal venture status (business strategy) — never publish
+STATUS.md

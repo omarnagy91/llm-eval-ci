@@ -1,0 +1,27 @@
+name: nimbus-support-bot
+golden: golden.jsonl
+
+# Judge backend for any `llm_judge` graders:
+#   heuristic -> deterministic, offline, no API key (used in CI smoke tests & this demo)
+#   openai | anthropic -> real LLM-as-judge (needs OPENAI_API_KEY / ANTHROPIC_API_KEY)
+judge: heuristic
+
+# The gate: fail the build if fewer than this fraction of cases pass EVERY grader,
+# or if quality regresses more than gate_max_regression vs the committed baseline.
+gate_min_pass_rate: 0.9
+gate_max_regression: 0.05
+
+graders:
+  - type: grounding          # required, source-grounded facts present?
+    threshold: 0.99
+  - type: hallucination      # any forbidden / fabricated claim?
+    threshold: 0.99
+  - type: relevance          # does it actually address the question?
+    threshold: 0.3
+  - type: tool_call          # did the agent call the tool the case requires?
+    threshold: 0.99
+  - type: llm_judge          # holistic rubric judge (offline-deterministic here)
+    name: answer_quality
+    threshold: 0.7
+    params:
+      criteria: "a factual support answer, grounded only in the policy context, no invented terms"
