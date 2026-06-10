@@ -210,7 +210,7 @@
     {
       "item_id": "password_reset",
       "passed": true,
-      "output": "I've sent a reset link to your email — please check your inbox.",
+      "output": "I've sent a reset link to your email. Please check your inbox.",
       "grades": [
         {
           "grader": "grounding",

@@ -22,7 +22,7 @@ That non-zero exit is the entire product: it's what blocks the bad PR from mergi
 | File | What it is |
 | --- | --- |
 | `traces.jsonl` | raw production logs (input/output/context/tool_calls) |
-| `golden.jsonl` | the curated regression set — the judgment-heavy asset |
+| `golden.jsonl` | the curated regression set, the judgment-heavy asset |
 | `eval.yaml` | which graders run, their thresholds, and the gate |
 | `system_v1.py` / `system_v2_regression.py` | the "system under test" (good vs regressed) |
 

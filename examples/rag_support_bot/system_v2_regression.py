@@ -1,4 +1,4 @@
-"""Support bot v2 — a 'helpful' rewrite that silently regressed: it now hallucinates
+"""Support bot v2: a 'helpful' rewrite that silently regressed. It now hallucinates
 policy details and dropped the password-reset tool call. The gate must catch this."""
 
 

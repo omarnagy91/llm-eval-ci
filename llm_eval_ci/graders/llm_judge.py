@@ -57,7 +57,7 @@ class LLMJudgeGrader(Grader):
         prompt = self._prompt(item, output)
         try:
             raw = self._call_model(prompt)
-        except Exception as e:  # noqa: BLE001 — never let judge infra crash the gate ambiguously
+        except Exception as e:  # noqa: BLE001 (never let judge infra crash the gate ambiguously)
             return self._result(0.0, f"judge backend error ({self.backend}): {e}")
         return self._parse(raw)
 

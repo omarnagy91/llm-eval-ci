@@ -1,4 +1,4 @@
-"""Support bot v1 — answers grounded in the Nimbus policy docs. Passes the gate."""
+"""Support bot v1: answers grounded in the Nimbus policy docs. Passes the gate."""
 
 
 def _answer(q: str) -> str:
@@ -14,8 +14,8 @@ def _answer(q: str) -> str:
     if "data" in q and "stored" in q:
         return "Your data is stored in the EU (Frankfurt) region."
     if "password" in q:
-        return "I've sent a reset link to your email — please check your inbox."
-    return "I'm not certain about that — let me connect you with a human agent."
+        return "I've sent a reset link to your email. Please check your inbox."
+    return "I'm not certain about that, let me connect you with a human agent."
 
 
 def respond_full(item: dict) -> dict:

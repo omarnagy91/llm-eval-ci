@@ -17,7 +17,7 @@ class Trace:
 
 @dataclass
 class GoldenItem:
-    """A curated regression case. This is the asset — the result of human judgment
+    """A curated regression case. This is the asset: the result of human judgment
     about what "correct" means for *this* product, distilled from real failures."""
     id: str
     input: str

@@ -1,0 +1,35 @@
+name: Bug report
+description: The gate, a grader, or the CLI did something wrong.
+labels: ["bug"]
+body:
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened
+      description: What did you run, what did you expect, what did you get instead.
+      placeholder: |
+        Ran: llm-eval-ci run --config eval.yaml --system my_system.py
+        Expected: gate fails (a must_not_include trap appears in the output)
+        Got: gate passed
+    validations:
+      required: true
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest golden.jsonl line + eval.yaml + output that shows the problem. Strip anything private.
+      render: text
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Version / commit
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: python
+    attributes:
+      label: Python version
+      placeholder: "3.12"

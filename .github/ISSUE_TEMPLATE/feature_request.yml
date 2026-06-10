@@ -1,0 +1,23 @@
+name: Feature request
+description: A grader idea, a gate behavior, or a workflow this tool should support.
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What regression or failure mode can you not catch today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed behavior
+      description: What should the config / CLI / report look like? Keep the core small; deterministic by default.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Including "use DeepEval / promptfoo / Ragas for this" if that is honestly the better answer.

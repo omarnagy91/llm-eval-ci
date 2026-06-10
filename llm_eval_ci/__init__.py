@@ -1,4 +1,4 @@
-"""llm-eval-ci — golden-set regression evaluation + CI quality gate for LLM systems.
+"""llm-eval-ci: golden-set regression evaluation + CI quality gate for LLM systems.
 
 The judgment-heavy asset is the *golden set*: real production failures curated into
 trusted regression cases. The graders score a system's current outputs against that set;

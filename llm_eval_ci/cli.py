@@ -45,7 +45,7 @@ def _cmd_run(args) -> int:
 def _cmd_golden_build(args) -> int:
     """Scaffold a golden set from production traces for human curation.
 
-    This deliberately does NOT auto-label correctness — the judgment about what
+    This deliberately does NOT auto-label correctness: the judgment about what
     'correct' means is the human's job and the actual asset. It pre-fills the
     structure (and seeds `must_include` from the logged output) so curation is fast."""
     traces = load_traces(args.traces)
@@ -68,13 +68,13 @@ def _cmd_golden_build(args) -> int:
     ]
     write_golden(args.out, items)
     print(f"[llm-eval-ci] scaffolded {len(items)} golden cases -> {args.out}")
-    print("  Next: curate each case — confirm the reference, add required facts and hallucination traps.")
+    print("  Next: curate each case. Confirm the reference, add required facts and hallucination traps.")
     return 0
 
 
 def _cmd_report(args) -> int:
     d = json.load(open(args.json, "r", encoding="utf-8"))
-    print(f"# {d.get('config_name')} — {'PASS' if d.get('gate_passed') else 'FAIL'}")
+    print(f"# {d.get('config_name')}: {'PASS' if d.get('gate_passed') else 'FAIL'}")
     print(f"overall pass rate: {d.get('overall_pass_rate', 0):.0%}")
     for gn, sc in (d.get("grader_scores") or {}).items():
         print(f"  - {gn}: {sc:.2f}")
