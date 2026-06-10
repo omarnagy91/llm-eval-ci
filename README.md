@@ -229,11 +229,12 @@ llm-eval-ci report       --json rep.json
 
 ## Roadmap
 
-- Publish to PyPI (today the install is from the git URL).
+- Publish to PyPI so the install is not from a git URL ([#4](https://github.com/omarnagy91/llm-eval-ci/issues/4)).
 - Honor the grader `weight` field in gate aggregation, or remove it (it is currently parsed and unused, [#1](https://github.com/omarnagy91/llm-eval-ci/issues/1)).
-- Per-label breakdown in reports; golden items already carry `labels`, reports ignore them ([#4](https://github.com/omarnagy91/llm-eval-ci/issues/4)).
-- OpenAI-compatible `base_url` judge backend for local and self-hosted models ([#6](https://github.com/omarnagy91/llm-eval-ci/issues/6)).
+- Per-label breakdown in reports; golden items already carry `labels`, reports ignore them ([#3](https://github.com/omarnagy91/llm-eval-ci/issues/3)).
+- OpenAI-compatible `base_url` judge backend for local and self-hosted models ([#5](https://github.com/omarnagy91/llm-eval-ci/issues/5)).
 - Fail loudly when `--outputs` is missing a golden id instead of grading an empty answer ([#2](https://github.com/omarnagy91/llm-eval-ci/issues/2)).
+- A `golden validate` subcommand to lint a golden set before a run ([#6](https://github.com/omarnagy91/llm-eval-ci/issues/6)).
 
 ## Contributing
 
