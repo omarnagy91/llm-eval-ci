@@ -9,6 +9,7 @@ from . import __version__
 from .config import load_config
 from .ingest import load_traces, load_golden, write_golden
 from .models import GoldenItem
+from .validate import validate_golden
 from .report import to_console, to_markdown, write_json, write_markdown
 from .runner import run_eval
 
@@ -72,6 +73,30 @@ def _cmd_golden_build(args) -> int:
     return 0
 
 
+
+
+def _cmd_golden_validate(args) -> int:
+    """Lint a golden set offline before a run."""
+    items = load_golden(args.golden)
+    has_full = None
+    if args.system:
+        from .runner import _load_system
+        mod = _load_system(args.system)
+        has_full = hasattr(mod, "respond_full")
+    issues = validate_golden(items, system_has_respond_full=has_full)
+    if not issues:
+        print(f"[llm-eval-ci] golden validate: ok ({len(items)} cases)")
+        return 0
+    errors = 0
+    for iss in issues:
+        loc = f"case {iss.case_id}: " if iss.case_id is not None else ""
+        print(f"[llm-eval-ci] {iss.severity}: {loc}{iss.message}")
+        if iss.severity == "error":
+            errors += 1
+    print(f"[llm-eval-ci] golden validate: {errors} error(s), {len(issues) - errors} warning(s) in {len(items)} cases")
+    return 1 if errors else 0
+
+
 def _cmd_report(args) -> int:
     d = json.load(open(args.json, "r", encoding="utf-8"))
     print(f"# {d.get('config_name')}: {'PASS' if d.get('gate_passed') else 'FAIL'}")
@@ -106,6 +131,10 @@ def main(argv=None) -> int:
     gb.add_argument("--out", required=True, help="output golden jsonl")
     gb.add_argument("--sample", type=int, default=0, help="sample N cases (deterministic spread)")
     gb.set_defaults(func=_cmd_golden_build)
+    gv = gsub.add_parser("validate", help="lint a golden set before a run")
+    gv.add_argument("--golden", required=True, help="golden jsonl to lint")
+    gv.add_argument("--system", help="optional system module; warn if expected_tool needs respond_full")
+    gv.set_defaults(func=_cmd_golden_validate)
 
     rp = sub.add_parser("report", help="re-render a json report")
     rp.add_argument("--json", required=True)

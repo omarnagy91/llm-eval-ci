@@ -222,6 +222,7 @@ llm-eval-ci run          --config eval.yaml (--system mod.py | --outputs out.jso
                          [--baseline rep.json] [--report report.md] [--json rep.json]
                          [--name label] [--judge backend] [--judge-model id] [--summary]
 llm-eval-ci golden build --traces traces.jsonl --out golden.jsonl [--sample N]
+llm-eval-ci golden validate --golden golden.jsonl [--system mod.py]
 llm-eval-ci report       --json rep.json
 ```
 
@@ -234,7 +235,6 @@ llm-eval-ci report       --json rep.json
 - Per-label breakdown in reports; golden items already carry `labels`, reports ignore them ([#3](https://github.com/omarnagy91/llm-eval-ci/issues/3)).
 - OpenAI-compatible `base_url` judge backend for local and self-hosted models ([#5](https://github.com/omarnagy91/llm-eval-ci/issues/5)).
 - Fail loudly when `--outputs` is missing a golden id instead of grading an empty answer ([#2](https://github.com/omarnagy91/llm-eval-ci/issues/2)).
-- A `golden validate` subcommand to lint a golden set before a run ([#6](https://github.com/omarnagy91/llm-eval-ci/issues/6)).
 
 ## Contributing
 
